@@ -11,8 +11,11 @@
 		184555552C509AB000517A43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184555542C509AB000517A43 /* ContentView.swift */; };
 		184555572C509AB300517A43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184555562C509AB300517A43 /* Assets.xcassets */; };
 		1845555A2C509AB300517A43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184555592C509AB300517A43 /* Preview Assets.xcassets */; };
-		452F1DF52C5114A800B63289 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DF42C5114A800B63289 /* CommonButton.swift */; };
+		452F1DF52C5114A800B63289 /* NavLinkText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DF42C5114A800B63289 /* NavLinkText.swift */; };
 		452F1DF72C5117A800B63289 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DF62C5117A800B63289 /* Background.swift */; };
+		452F1DF92C51221200B63289 /* AddCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DF82C51221200B63289 /* AddCatView.swift */; };
+		452F1DFB2C512ECA00B63289 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DFA2C512ECA00B63289 /* MapView.swift */; };
+		452F1DFD2C512F9B00B63289 /* CatDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DFC2C512F9B00B63289 /* CatDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +24,11 @@
 		184555542C509AB000517A43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		184555562C509AB300517A43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		184555592C509AB300517A43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		452F1DF42C5114A800B63289 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
+		452F1DF42C5114A800B63289 /* NavLinkText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLinkText.swift; sourceTree = "<group>"; };
 		452F1DF62C5117A800B63289 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		452F1DF82C51221200B63289 /* AddCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCatView.swift; sourceTree = "<group>"; };
+		452F1DFA2C512ECA00B63289 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		452F1DFC2C512F9B00B63289 /* CatDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +63,11 @@
 			children = (
 				184555522C509AB000517A43 /* CatAppApp.swift */,
 				184555542C509AB000517A43 /* ContentView.swift */,
+				452F1DFC2C512F9B00B63289 /* CatDataView.swift */,
+				452F1DF82C51221200B63289 /* AddCatView.swift */,
+				452F1DFA2C512ECA00B63289 /* MapView.swift */,
 				452F1DF62C5117A800B63289 /* Background.swift */,
-				452F1DF42C5114A800B63289 /* CommonButton.swift */,
+				452F1DF42C5114A800B63289 /* NavLinkText.swift */,
 				184555562C509AB300517A43 /* Assets.xcassets */,
 				184555582C509AB300517A43 /* Preview Content */,
 			);
@@ -143,9 +152,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				452F1DFD2C512F9B00B63289 /* CatDataView.swift in Sources */,
 				184555552C509AB000517A43 /* ContentView.swift in Sources */,
+				452F1DFB2C512ECA00B63289 /* MapView.swift in Sources */,
+				452F1DF92C51221200B63289 /* AddCatView.swift in Sources */,
 				184555532C509AB000517A43 /* CatAppApp.swift in Sources */,
-				452F1DF52C5114A800B63289 /* CommonButton.swift in Sources */,
+				452F1DF52C5114A800B63289 /* NavLinkText.swift in Sources */,
 				452F1DF72C5117A800B63289 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

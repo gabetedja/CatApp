@@ -9,33 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     
-    //user input variables
+    // user input variables
     // i think these will need to be in their own views, not here - atharva
     @State var label: String = ""
     @State var breed: String = ""
     
     var body: some View {
-        ZStack { // root zstack - contains bg and root vstack
+        NavigationView { // this must be the root element for some stupid reason, otherwise bg doesn't work with navlinks.
             
-            Background()
-            
-            VStack { // root vstack - all content goes inside here
+            ZStack { // so the background can be behind the content
                 
-                LogoAndHeader()
-                    .padding([.bottom], 10)
+                Background()
                 
-                HStack {
-                    CommonButton(buttonText: "Add New Cat")
-                    CommonButton(buttonText: "Map View")
-                    CommonButton(buttonText: "Cat Data")
+                VStack { // all content goes inside here
+                    
+                    LogoAndHeader()
+                        .padding([.bottom], 10)
+                    NavigationMenu()
+                    
                 }
+                .padding([.bottom], 100) // content alignment
             }
-            .padding([.bottom], 80) // moving all content up
         }
     }
 }
 
-// Helper view specific to this view
+// SUBVIEWS BELOW:
+
 struct LogoAndHeader: View {
     var body: some View {
         VStack {
@@ -49,6 +49,23 @@ struct LogoAndHeader: View {
         }
     }
 }
+
+struct NavigationMenu: View {
+    var body: some View {
+        HStack {
+            NavigationLink(destination: AddCatView(), label: {
+                NavLinkText(textString: "Add Cat")
+            })
+            NavigationLink(destination: MapView(), label: {
+                NavLinkText(textString: "Map View")
+            })
+            NavigationLink(destination: CatDataView(), label: {
+                NavLinkText(textString: "Cat Data")
+            })
+        }
+    }
+}
+
 
 #Preview {
     ContentView()

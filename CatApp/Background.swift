@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// The background of every view
 struct Background: View {
     var body: some View {
         let bgColor = Color(red: 0.6, green: 0.4, blue: 0.2, opacity: 0.4) // creating a custom light brown
