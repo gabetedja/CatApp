@@ -11,8 +11,7 @@ struct ContentView: View {
     
     // user input variables
     // i think these will need to be in their own views, not here - atharva
-    @State var label: String = ""
-    @State var breed: String = ""
+
     
     var body: some View {
         NavigationView { // this must be the root element for some stupid reason, otherwise bg doesn't work with navlinks.
