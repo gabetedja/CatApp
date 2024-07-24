@@ -10,30 +10,42 @@ import SwiftUI
 struct ContentView: View {
     
     //user input variables
+    // i think these will need to be in their own views, not here - atharva
     @State var label: String = ""
     @State var breed: String = ""
     
     var body: some View {
-        VStack { //VERTICAL AXIS
-            Image(systemName: "cat")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Cat Spotter")
+        ZStack { // root zstack - contains bg and root vstack
+            
+            Background()
+            
+            VStack { // root vstack - all content goes inside here
+                
+                LogoAndHeader()
+                    .padding([.bottom], 10)
+                
+                HStack {
+                    CommonButton(buttonText: "Add New Cat")
+                    CommonButton(buttonText: "Map View")
+                    CommonButton(buttonText: "Cat Data")
+                }
+            }
+            .padding([.bottom], 80) // moving all content up
         }
-        .padding()
-        HStack { //HORIZONTAL AXIS
-            Button("Add new cat") {
-                
-            }
-            .buttonStyle(.borderedProminent)
-            Button("Map View") {
-                
-            }
-            .buttonStyle(.borderedProminent)
-            Button("User Data") {
-                
-            }
-            .buttonStyle(.borderedProminent)
+    }
+}
+
+// Helper view specific to this view
+struct LogoAndHeader: View {
+    var body: some View {
+        VStack {
+            Image(.standingCat)
+                .resizable()
+                .frame(width: 200, height: 200)
+            
+            Text("Cat Spotter")
+                .foregroundColor(.black)
+                .font(.system(size: 30))
         }
     }
 }

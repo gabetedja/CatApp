@@ -2,7 +2,7 @@
 //  CatAppApp.swift
 //  CatApp
 //
-//  Created by Gabriel Tedja on 7/23/24.
+//  Project by Gabriel Tedja and Atharva Nagtode
 //
 
 import SwiftUI
