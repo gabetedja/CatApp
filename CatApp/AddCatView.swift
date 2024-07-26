@@ -22,30 +22,35 @@ struct AddCatView: View {
             ZStack { // root container
                 Background()
                 VStack (spacing: 0) { // all content goes inside here
+                    Text("Add A New Cat Sighting")
+                        .padding(.bottom, -20) // jank padding hack, but i had no idea what was adding the weird space.
                     Form {
                         Section() {
                             TextField(text:$label) {
-                                Text("Cat Label")
+                                Text("Cat Nickname")
                             }
                             TextField(text:$breed) {
                                 Text("Breed")
                             }
-                            PhotosPicker("Upload image of cat", selection: $catItem, matching: .images)
+                            PhotosPicker("Upload Cat Image", selection: $catItem, matching: .images)
                         }
                     }
-                    .frame(height: 180)
+                    .frame(height: 195)
                     .scrollContentBackground(.hidden) // hides the default form background
                     Text("Where did you see this cat?")
                         .padding(.bottom, 10)
                     Map()
                 }
             }
-            .navigationBarTitle("Add A Cat Sighting")
-            //.navigationBarTitleDisplayMode(.inline) // makes header smaller? it still looks jank..
+            .navigationBarHidden(true)
+            // ditching the idea of a title bar. too hard to make it not ugly. keeping this here in case we want it back.
+            //.navigationBarTitle("Add A Cat Sighting")
+            //.navigationBarTitleDisplayMode(.inline) // do we want this?
             
-            // this took me way too long to find how to do holy shit.
+            // next 2 lines took me way too long to find how to do holy shit. controls back section's color
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarBackground(bgColor, for: .navigationBar)
+
         }
     }
 }
