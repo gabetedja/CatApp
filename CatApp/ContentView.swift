@@ -9,14 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    // user input variables
-    // i think these will need to be in their own views, not here - atharva
-
-    
     var body: some View {
-        NavigationView { // this must be the root element for some stupid reason, otherwise bg doesn't work with navlinks.
+        NavigationView { // this must be the root container, otherwise bg doesn't work with navlinks.
             
-            ZStack { // so the background can be behind the content
+            ZStack {
                 
                 Background()
                 
@@ -24,6 +20,7 @@ struct ContentView: View {
                     
                     LogoAndHeader()
                         .padding([.bottom], 10)
+                    
                     NavigationMenu()
                     
                 }

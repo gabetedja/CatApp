@@ -18,20 +18,34 @@ struct AddCatView: View {
     @State private var catImage: Image?
 
     var body: some View {
-        ZStack {
-            Background()
-            Form {
-                TextField(text:$label) {
-                    Text("Label/Name")
+        NavigationView {
+            ZStack { // root container
+                Background()
+                VStack (spacing: 0) { // all content goes inside here
+                    Form {
+                        Section() {
+                            TextField(text:$label) {
+                                Text("Cat Label")
+                            }
+                            TextField(text:$breed) {
+                                Text("Breed")
+                            }
+                            PhotosPicker("Upload image of cat", selection: $catItem, matching: .images)
+                        }
+                    }
+                    .frame(height: 180)
+                    .scrollContentBackground(.hidden) // hides the default form background
+                    Text("Where did you see this cat?")
+                        .padding(.bottom, 10)
+                    Map()
                 }
-                TextField(text:$breed) {
-                    Text("Breed")
-                }
-                PhotosPicker("Upload image of cat", selection: $catItem, matching: .images)
-                Map()
             }
+            .navigationBarTitle("Add A Cat Sighting")
+            //.navigationBarTitleDisplayMode(.inline) // makes header smaller? it still looks jank..
             
-            
+            // this took me way too long to find how to do holy shit.
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(bgColor, for: .navigationBar)
         }
     }
 }
