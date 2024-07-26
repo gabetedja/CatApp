@@ -5,6 +5,7 @@
 //  Project by Gabriel Tedja and Atharva Nagtode
 //
 
+import SwiftData
 import SwiftUI
 
 @main
@@ -13,5 +14,6 @@ struct CatAppApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Cat.self) //swiftdata thing
     }
 }

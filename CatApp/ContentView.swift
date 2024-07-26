@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+
+    
     
     var body: some View {
         NavigationView { // this must be the root container, otherwise bg doesn't work with navlinks.

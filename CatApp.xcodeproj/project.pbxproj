@@ -11,6 +11,7 @@
 		184555552C509AB000517A43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184555542C509AB000517A43 /* ContentView.swift */; };
 		184555572C509AB300517A43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184555562C509AB300517A43 /* Assets.xcassets */; };
 		1845555A2C509AB300517A43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184555592C509AB300517A43 /* Preview Assets.xcassets */; };
+		18E5919A2C5448E1007E2BCB /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E591992C5448E1007E2BCB /* Cat.swift */; };
 		452F1DF52C5114A800B63289 /* NavLinkText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DF42C5114A800B63289 /* NavLinkText.swift */; };
 		452F1DF72C5117A800B63289 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DF62C5117A800B63289 /* Background.swift */; };
 		452F1DF92C51221200B63289 /* AddCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DF82C51221200B63289 /* AddCatView.swift */; };
@@ -24,6 +25,7 @@
 		184555542C509AB000517A43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		184555562C509AB300517A43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		184555592C509AB300517A43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		18E591992C5448E1007E2BCB /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		452F1DF42C5114A800B63289 /* NavLinkText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLinkText.swift; sourceTree = "<group>"; };
 		452F1DF62C5117A800B63289 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		452F1DF82C51221200B63289 /* AddCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCatView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		184555512C509AB000517A43 /* CatApp */ = {
 			isa = PBXGroup;
 			children = (
+				18E591992C5448E1007E2BCB /* Cat.swift */,
 				184555522C509AB000517A43 /* CatAppApp.swift */,
 				184555542C509AB000517A43 /* ContentView.swift */,
 				452F1DFC2C512F9B00B63289 /* CatDataView.swift */,
@@ -156,6 +159,7 @@
 				184555552C509AB000517A43 /* ContentView.swift in Sources */,
 				452F1DFB2C512ECA00B63289 /* MapView.swift in Sources */,
 				452F1DF92C51221200B63289 /* AddCatView.swift in Sources */,
+				18E5919A2C5448E1007E2BCB /* Cat.swift in Sources */,
 				184555532C509AB000517A43 /* CatAppApp.swift in Sources */,
 				452F1DF52C5114A800B63289 /* NavLinkText.swift in Sources */,
 				452F1DF72C5117A800B63289 /* Background.swift in Sources */,

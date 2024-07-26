@@ -10,6 +10,9 @@ import PhotosUI //import necessary for photo uploads
 import MapKit
 import CoreLocation //necessary libraries later
 import CoreLocationUI
+import SwiftData
+
+
 
 struct AddCatView: View {
     @State var label: String = "" //you need to declare these variables in the struct
