@@ -13,11 +13,19 @@ import _PhotosUI_SwiftUI
 
 @Model
 class Cat {
-   var label: String
-   var breed: String
    
-    init(label: String = "", breed: String = "") {
-       self.label = label
-       self.breed = breed
-   }
+    var label: String
+    var breed: String
+    
+    var latitude: Double
+    var longitude: Double
+   
+    init(label: String, breed: String, latitude: Double, longitude: Double) {
+        
+        self.label = label
+        self.breed = breed
+        
+        self.latitude = latitude
+        self.longitude = longitude
+    }
 }

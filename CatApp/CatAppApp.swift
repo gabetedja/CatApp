@@ -14,6 +14,6 @@ struct CatAppApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Cat.self) //swiftdata thing
+        .modelContainer(for: Cat.self) // creating a container that stores Cat objects
     }
 }
