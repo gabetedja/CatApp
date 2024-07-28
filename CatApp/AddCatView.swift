@@ -136,12 +136,6 @@ struct AddCatMapView: View {
     }
 }
 
-
-// MAP todo list:
-//        // initially, center map on user location <DONE>
-//        // allow user to tap on map and add marker
-//        // then, need to store that data in an object somewhere,
-//        // using swiftdata.
 #Preview {
     AddCatView()
         .modelContainer(for: Cat.self)

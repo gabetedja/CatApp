@@ -15,18 +15,17 @@ struct MapView: View {
     @Query var cats: [Cat] // needed for read operations
     
     var body: some View {
-        ZStack {
-            Background()
-            VStack {
-                Button(action: {
-                    for cat in cats {
-                        print("\(cat.label) is \(cat.breed) breed. They were seen at (\(cat.latitude),\(cat.longitude))")
-                    }
-                }) {
-                    Text("TEST (delete this later): Load cat data")
+        NavigationView {
+            ZStack {
+                Background()
+                VStack {
+                    Text("Here's all the places you've seen a cat!")
+                    MapSection()
                 }
-                MapSection()
             }
+            .navigationBarHidden(true)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(bgColor, for: .navigationBar)
         }
     }
 }
