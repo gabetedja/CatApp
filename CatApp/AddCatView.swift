@@ -50,7 +50,6 @@ struct AddCatView: View {
             // next 2 lines took me way too long to find how to do holy shit. these control the toolbar's color
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarBackground(bgColor, for: .navigationBar)
-
         }
     }
 }

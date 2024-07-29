@@ -12,36 +12,35 @@ import CoreLocation
 import CoreLocationUI
 
 struct CatDataView: View {
+    
     //reference to database
     @Environment(\.modelContext) private var context
-    @Query var cats: [Cat] //ensures a loop iterates thru here
-    // Add a state variable for cat location
-    @State private var newCatLocation: CLLocationCoordinate2D?
-
     
+    @Query var cats: [Cat] //ensures a loop iterates thru here
+
+
     var body: some View {
-        List {
-            VStack {
-                HStack {
-                    Text("Name")
-                    Text("Breed")
-                }
-            }
-            ForEach(cats) { cat in
-                VStack {
-                    HStack {
-                        Text(cat.label)
-                        Text(cat.breed)
-                           
+        NavigationView {
+            ZStack {
+                Background()
+                ScrollView {
+                    ForEach(cats) { cat in
+                        VStack {
+                            Text("\(cat.label), who is a(n) \(cat.breed)")
+                            Map() {
+                                Marker("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude))
+                            }
+                            .frame(height: 300)
+                            
+                            // image goes here
+                        }
+                        .padding([.bottom, .leading, .trailing], 20)
                     }
-                    Map() {
-                        Marker("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude))
-                    }
-                    .frame(height: 195)
-                    .scrollContentBackground(.hidden) // hides the default form background
                 }
+                .navigationBarHidden(true)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarBackground(bgColor, for: .navigationBar)
             }
-            .navigationTitle("List of Cats")
         }
     }
 }

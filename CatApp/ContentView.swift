@@ -61,7 +61,7 @@ struct NavigationMenu: View {
                 NavLinkText(textString: "Map View")
             })
             NavigationLink(destination: CatDataView(), label: {
-                NavLinkText(textString: "Cat Data")
+                NavLinkText(textString: "Cat List")
             })
         }
     }
