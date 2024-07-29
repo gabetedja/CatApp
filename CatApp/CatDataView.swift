@@ -27,12 +27,18 @@ struct CatDataView: View {
                     ForEach(cats) { cat in
                         VStack {
                             Text("\(cat.label), who is a(n) \(cat.breed)")
+                            
+                            // image goes here
+                            
                             Map() {
                                 Marker("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude))
                             }
+                            .mapStyle(.hybrid(elevation: .realistic))
+                            .mapControls {
+                                MapCompass()
+                                MapPitchToggle()
+                            }
                             .frame(height: 300)
-                            
-                            // image goes here
                         }
                         .padding([.bottom, .leading, .trailing], 20)
                     }

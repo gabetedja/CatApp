@@ -40,6 +40,10 @@ struct MapSection: View {
                 Marker("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude))
             }
         }
+        .mapControls {
+            MapCompass()
+            MapPitchToggle()
+        }
         .onAppear {
             CLLocationManager().requestWhenInUseAuthorization() // ask for location permission
         }
