@@ -16,12 +16,7 @@ struct MapView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                Background()
-                VStack {
-                    MapSection()
-                }
-            }
+            MapSection()
         }
     }
 }
