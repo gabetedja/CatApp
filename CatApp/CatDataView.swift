@@ -7,37 +7,44 @@
 import SwiftUI
 import SwiftData
 import PhotosUI
+import MapKit
+import CoreLocation
+import CoreLocationUI
 
 struct CatDataView: View {
     //reference to database
     @Environment(\.modelContext) private var context
     @Query var cats: [Cat] //ensures a loop iterates thru here
-    
-    
-    
+    // Add a state variable for cat location
+    @State private var newCatLocation: CLLocationCoordinate2D?
+
     
     var body: some View {
- 
         List {
-                ForEach(cats, id:\.self) { cat in
-                    VStack {
-                        HStack {
-                            Text("Name")
-                            Text("Breed")
-                        }
-                    }
+            VStack {
+                HStack {
+                    Text("Name")
+                    Text("Breed")
+                }
+            }
+            ForEach(cats) { cat in
+                VStack {
                     HStack {
                         Text(cat.label)
                         Text(cat.breed)
-                            .background(Rectangle().fill(Color.white).shadow(radius: 3))
-
+                           
                     }
+                    Map() {
+                        Marker("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude))
+                    }
+                    .frame(height: 195)
+                    .scrollContentBackground(.hidden) // hides the default form background
                 }
-                .scrollContentBackground(.hidden)
             }
             .navigationTitle("List of Cats")
         }
     }
+}
 
 
 #Preview {
