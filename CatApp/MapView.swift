@@ -19,13 +19,9 @@ struct MapView: View {
             ZStack {
                 Background()
                 VStack {
-                    Text("Here's all the places you've seen a cat!")
                     MapSection()
                 }
             }
-            .navigationBarHidden(true)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(bgColor, for: .navigationBar)
         }
     }
 }
