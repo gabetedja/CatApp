@@ -24,23 +24,33 @@ struct CatDataView: View {
             ZStack {
                 Background()
                 ScrollView {
+                    Text("List of Cats")
+                        .padding(.bottom, 10)
                     ForEach(cats) { cat in
-                        VStack {
-                            Text("\(cat.label), who is a(n) \(cat.breed)")
-                            
+                        HStack {
                             // image goes here
                             
-                            Map() {
-                                Marker("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude))
+                            VStack {
+                                Text("\(cat.label)")
+                                Map() {
+                                    Marker("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude))
+                                }
+                                
+                                .mapStyle(.hybrid(elevation: .realistic))
+                                .frame(height: 170)
                             }
-                            .mapStyle(.hybrid(elevation: .realistic))
-                            .mapControls {
-                                MapCompass()
-                                MapPitchToggle()
+                            
+                            VStack {
+                                Text("\(cat.breed)")
+                                Map() {
+                                    Marker("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude))
+                                }
+                                
+                                .mapStyle(.hybrid(elevation: .realistic))
+                                .frame(height: 170)
                             }
-                            .frame(height: 300)
                         }
-                        .padding([.bottom, .leading, .trailing], 20)
+                        .padding([.bottom, .leading, .trailing], 10)
                     }
                 }
                 .navigationBarHidden(true)
