@@ -9,8 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-
-    
+    @Environment(\.modelContext) private var context
     
     var body: some View {
         
@@ -27,6 +26,17 @@ struct ContentView: View {
                         .padding([.bottom], 10)
                     
                     NavigationMenu()
+                    
+                    Button("ERASE CAT DATA") {
+                        do {
+                            try context.delete(model: Cat.self)
+                            print("Deleted all cats")
+                        } catch {
+                            print("Failed to delete cats")
+                        }
+                    }
+                    .padding([.top], 35)
+                    
                     
                 }
                 .padding([.bottom], 100) // content alignment
@@ -52,26 +62,18 @@ struct LogoAndHeader: View {
 }
 
 struct NavigationMenu: View {
-    @Environment(\.modelContext) private var context
     var body: some View {
-        HStack {
-            NavigationLink(destination: AddCatView(), label: {
-                NavLinkText(textString: "Add Cat")
-            })
-            NavigationLink(destination: MapView(), label: {
-                NavLinkText(textString: "Map View")
-            })
-            NavigationLink(destination: CatDataView(), label: {
-                NavLinkText(textString: "Cat List")
-            })
-            // delete this after, or at least rearrange it.
-            Button("Button title") {
-                do {
-                    try context.delete(model: Cat.self)
-                    print("deleted all cats")
-                } catch {
-                    print("Failed to delete cats.")
-                }
+        VStack {
+            HStack {
+                NavigationLink(destination: AddCatView(), label: {
+                    NavLinkText(textString: "Add Cat")
+                })
+                NavigationLink(destination: MapView(), label: {
+                    NavLinkText(textString: "Map View")
+                })
+                NavigationLink(destination: CatDataView(), label: {
+                    NavLinkText(textString: "Cat List")
+                })
             }
         }
     }

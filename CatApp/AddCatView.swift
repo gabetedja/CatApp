@@ -39,6 +39,8 @@ struct AddCatView: View {
                         .scrollContentBackground(.hidden) // hides the default form background
                     
                     Text("Where did you see this cat?")
+                    Text("Tapping the map will add a new entry,")
+                    Text("so make sure you've entered everything.")
                         .padding(.bottom, 10)
                     
                     AddCatMapView(label: label, breed: breed, image: selectedPhotoData)
@@ -145,7 +147,7 @@ struct AddCatMapView: View {
                     // Update the coordinate state variable, which will redraw the Map with the marker
                     newCatLocation = coordinate
                     
-                    // debug messages
+                    // debug messages, can be cleaned up and a app notif.
                     print("added object")
                     for cat in cats {
                         print("\(cat.label) is \(cat.breed) breed. They were seen at (\(cat.latitude), \(cat.longitude)) and the img data is \(cat.image)")

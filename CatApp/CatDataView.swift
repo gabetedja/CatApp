@@ -33,19 +33,23 @@ struct CatDataView: View {
                                 Map() {
                                     Marker("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude))
                                 }
-                                
                                 .mapStyle(.hybrid(elevation: .realistic))
                                 .frame(height: 170)
                             }
                             
                             VStack {
                                 Text("\(cat.breed)")
-                                Map() {
-                                    Marker("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude))
+                                if let imageData = cat.image, let uiImage = UIImage(data: imageData) {
+                                    // make the following code a subview, since its duplicated in 2 places
+                                    Image(uiImage: uiImage)
+                                        .resizable()
+                                        .frame(height: 170)
                                 }
-                                
-                                .mapStyle(.hybrid(elevation: .realistic))
-                                .frame(height: 170)
+                                else {
+                                    Image(.standingCat)
+                                        .resizable()
+                                        .frame(height: 170)
+                                }
                             }
                         }
                         .padding([.bottom, .leading, .trailing], 10)

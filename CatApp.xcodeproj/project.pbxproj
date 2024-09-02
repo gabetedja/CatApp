@@ -17,6 +17,7 @@
 		452F1DF92C51221200B63289 /* AddCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DF82C51221200B63289 /* AddCatView.swift */; };
 		452F1DFB2C512ECA00B63289 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DFA2C512ECA00B63289 /* MapView.swift */; };
 		452F1DFD2C512F9B00B63289 /* CatDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F1DFC2C512F9B00B63289 /* CatDataView.swift */; };
+		45FDB5042C85670B001B3959 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 45FDB5032C85670B001B3959 /* README.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		452F1DF82C51221200B63289 /* AddCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCatView.swift; sourceTree = "<group>"; };
 		452F1DFA2C512ECA00B63289 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		452F1DFC2C512F9B00B63289 /* CatDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDataView.swift; sourceTree = "<group>"; };
+		45FDB5032C85670B001B3959 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 		184555462C509AB000517A43 = {
 			isa = PBXGroup;
 			children = (
+				45FDB5032C85670B001B3959 /* README.txt */,
 				184555512C509AB000517A43 /* CatApp */,
 				184555502C509AB000517A43 /* Products */,
 			);
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1845555A2C509AB300517A43 /* Preview Assets.xcassets in Resources */,
+				45FDB5042C85670B001B3959 /* README.txt in Resources */,
 				184555572C509AB300517A43 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
