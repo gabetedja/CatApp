@@ -8,8 +8,10 @@ app is functionally complete (i think). still, improvements can be made in place
 - clean up comments and add comments where there are none
 
 - interactions
-    - when tapping map to add cat, should clear photo info
+    - when tapping map to add cat, should clear addcat form info
     - some print statements can be app notifications
     - interactions with user input should be sanitized (basically just make sure they have inputted something)
     
-- fix minor scaling issues with images
+- fix scaling issues with images
+
+- UI improvements (can be obvious when you test app on physical phone)
