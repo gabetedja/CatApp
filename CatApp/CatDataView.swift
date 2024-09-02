@@ -28,8 +28,6 @@ struct CatDataView: View {
                         .padding(.bottom, 10)
                     ForEach(cats) { cat in
                         HStack {
-                            // image goes here
-                            
                             VStack {
                                 Text("\(cat.label)")
                                 Map() {

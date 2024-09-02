@@ -37,7 +37,21 @@ struct MapSection: View {
         Map(position: $cameraPosition) {
             UserAnnotation() // show user location blue dot
             ForEach(cats) { cat in
-                Marker("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude))
+                Annotation("\(cat.label)", coordinate: CLLocationCoordinate2D(latitude: cat.latitude, longitude: cat.longitude)) {
+                    if let imageData = cat.image, let uiImage = UIImage(data: imageData) {
+                        // make the following code a subview, since its duplicated in 2 places
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 40, height: 40)
+                    }
+                    else {
+                        Image(.standingCat)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 35, height: 35)
+                    }
+                }
             }
         }
         .mapControls {

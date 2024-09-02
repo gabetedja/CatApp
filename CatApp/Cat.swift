@@ -19,13 +19,17 @@ class Cat {
     
     var latitude: Double
     var longitude: Double
+    
+    var image: Data? // allow cat objects to not have an img 
    
-    init(label: String, breed: String, latitude: Double, longitude: Double) {
+    init(label: String, breed: String, latitude: Double, longitude: Double, image: Data?) {
         
         self.label = label
         self.breed = breed
         
         self.latitude = latitude
         self.longitude = longitude
+        
+        self.image = image
     }
 }

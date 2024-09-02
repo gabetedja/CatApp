@@ -52,6 +52,7 @@ struct LogoAndHeader: View {
 }
 
 struct NavigationMenu: View {
+    @Environment(\.modelContext) private var context
     var body: some View {
         HStack {
             NavigationLink(destination: AddCatView(), label: {
@@ -63,6 +64,15 @@ struct NavigationMenu: View {
             NavigationLink(destination: CatDataView(), label: {
                 NavLinkText(textString: "Cat List")
             })
+            // delete this after, or at least rearrange it.
+            Button("Button title") {
+                do {
+                    try context.delete(model: Cat.self)
+                    print("deleted all cats")
+                } catch {
+                    print("Failed to delete cats.")
+                }
+            }
         }
     }
 }
